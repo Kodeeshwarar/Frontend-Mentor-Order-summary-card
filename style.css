@@ -28,7 +28,7 @@ body {
   font-family: "Red Hat Display", sans-serif;
   font-size: 16px;
   line-height: 1.7;
-  background-image: url(/images/pattern-background-desktop.svg);
+  background-image: url(./images/pattern-background-desktop.svg);
   background-color: var(--pale-blue);
   box-sizing: inherit;
   background-repeat: no-repeat;
@@ -161,8 +161,6 @@ body {
   .order__card {
     min-width: 80%;
     max-width: 100%;
-    width:min(80%,100%);
-    
+    width: min(80%, 100%);
   }
- 
 }
