@@ -161,5 +161,8 @@ body {
   .order__card {
     min-width: 80%;
     max-width: 100%;
+    width:min(80%,100%);
+    
   }
+ 
 }
