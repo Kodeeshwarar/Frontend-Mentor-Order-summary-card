@@ -1,3 +1,11 @@
+/* 
+1) reset property
+2)root font size
+3)custom variables
+4)utility
+
+*/
+
 *,
 ::after,
 ::before {
@@ -8,22 +16,28 @@
 html {
   font-size: 62.55%;
 }
-.flex {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.grid {
-  display: grid;
-}
 :root {
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(225, 4%, 20%);
-  --btn-hover: hsla(245, 75%, 52%, 0.65);
+  --btn-hover: hsl(245deg 75% 52% / 82%);
 }
+
+/* utility section starts */
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+/* utility section end */
+
 body {
   font-family: "Red Hat Display", sans-serif;
   font-size: 16px;
@@ -42,7 +56,9 @@ body {
   margin-bottom: 2rem;
 }
 .order__card {
-  width: 36rem;
+  /* it is called logical property we can usem them inline-size insted of width */
+  inline-size: 100%; /* insted width: 100%;   */
+  max-inline-size: 39rem; /*  insted  max-width: 36rem; */
   background-color: #ffffff;
   padding-block-end: 3rem;
 }
@@ -68,7 +84,6 @@ body {
 }
 .order__content {
   padding-block-start: 3vh;
-  padding-inline: 3.5rem;
   flex-direction: column;
   gap: 2rem;
 }
@@ -106,7 +121,6 @@ body {
   flex-direction: column;
   align-items: stretch;
   gap: 3rem;
-  padding-inline: 3.5rem;
   padding-block-start: 2rem;
   text-align: center;
 }
@@ -134,33 +148,33 @@ body {
   font-size: 1.7rem;
   font-weight: 500;
   color: var(--desaturated-blue);
+  display: inline;
 }
 
 .btn-secondary:hover {
   color: var(--dark-blue);
 }
-@media only screen and (max-width: 43em) {
-  html {
-    font-size: 55%;
-  }
-  .order__card {
-    min-width: 60%;
-    max-width: 80%;
-  }
-  @media (hover: none) {
-    .btn-primary:hover {
-      background: var(--bright-blue);
-    }
+
+@media (hover: none) {
+  .btn-primary:hover {
+    background: var(--bright-blue);
   }
 }
 
-@media only screen and (max-width: 31em) {
-  html {
-    font-size: 50%;
-  }
-  .order__card {
-    min-width: 80%;
-    max-width: 100%;
-    width: min(80%, 100%);
-  }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* :is is a pseudo-class it takes on the specifity list of arguments.
+it's very useful.the number of line reduced and readablity increased here.
+
+*/
+/* :where is a pseudo-class. it is not take specifity list of arguments 
+it is defalut specificity value is 0 */
+
+:is(.btns, .order__content) {
+  padding-inline: 3.5rem;
 }

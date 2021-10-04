@@ -22,16 +22,6 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main class="main">
@@ -41,6 +31,7 @@
             src="./images/illustration-hero.svg"
             alt="illustration-hero"
             class="order__hero"
+            loading="eager"
           />
         </header>
         <div class="order__content flex">
@@ -54,7 +45,12 @@
 
           <div class="plan grid">
             <figure class="plan__figure">
-              <img src="./images/icon-music.svg" alt="" class="plan__image" />
+              <img
+                src="./images/icon-music.svg"
+                alt=""
+                class="plan__image"
+                loading="eager"
+              />
             </figure>
             <div class="plan__content">
               <h3 class="plan__title">Annual Plan</h3>
@@ -63,6 +59,7 @@
             <a href="#" class="plan__change">change</a>
           </div>
         </div>
+
         <footer class="btns">
           <a href="#" class="btn btn-primary"> Proceed to Payment </a>
           <a href="#" class="btn btn-secondary"> Cancel Order</a>
